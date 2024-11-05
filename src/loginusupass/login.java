@@ -53,6 +53,7 @@ public class login extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 324, 41));
 
@@ -111,6 +112,10 @@ public class login extends javax.swing.JFrame {
             if (rs.next()) {
                 // Si el usuario existe, muestra un mensaje de éxito
                 JOptionPane.showMessageDialog(this, "EL USUARIO ESTA EN LA BASE DE DATOS");
+                proceso p=new proceso();
+                p.setVisible(true);
+                this.setVisible(false);
+                
             } else {
                 // Si no existe, muestra un mensaje de error
                 JOptionPane.showMessageDialog(this, "EL NO USUARIO EXISTE EN LA BASE DE DATOS");
